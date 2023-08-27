@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./home.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <% if (isLoggedIn) { %>
+          <form action="/users/delete">
+
+            <button class="btn delete" type="submit">Delete Your Account</button>
+          </form>
+        <% } else { %>
+        <div class="buttons">
+          <form action="/users/login">
+            <button class="btn login" type="submit">Login</button>
+          </form>
+          <form action="/users/signup">
+            <button class="btn signUp" type="submit">Sign up</button>
+          </form>
+        </div>
+        <% } %>
+      </div>
+
+      <div class="box"><h1>Welcome to CSRF Demonstration!</h1></div>
+    </div>
+  </body>
+</html>

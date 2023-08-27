@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Type "Confirm to delete" in the box to delete your account!</h3>
+    <form action="/users/delete" method="post">
+      <input
+        type="text"
+        required
+        placeholder="Confirm to delete"
+        name="typetext"
+      />
+      <button type="submit">Delete Account</button>
+    </form>
+  </body>
+</html>
