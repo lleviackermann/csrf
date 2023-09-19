@@ -23,33 +23,40 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 1rem;
   background-color: #222;
   align-items: center;
   border-radius: 10px 10px 0 0;
 }
 
+.navbar h2 {
+  color: #fff;
+  font-size: 30px;
+}
+
 .box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 3rem;
-}
-
-.buttons {
-  display: flex;
   gap: 1rem;
-  align-items: center;
-  justify-content: center;
 }
 
-button {
-  background-color: #fff;
+.box input {
+    margin-top: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: medium;
+  /* border: none; */
+}
+
+.deleteInput {
+  background-color: #222;
   border-radius: 4px;
   border-style: none;
   box-sizing: border-box;
-  color: #222;
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
@@ -74,9 +81,10 @@ button {
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  margin-top: -1rem;
 }
 
-button:hover,
-button:focus {
+.deleteInput:hover,
+.deleteInput:focus {
   opacity: 0.75;
 }

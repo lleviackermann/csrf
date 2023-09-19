@@ -3,18 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/delete.css" />
     <title>Document</title>
   </head>
   <body>
-    <h3>Type "Confirm to delete" in the box to delete your account!</h3>
-    <form action="/users/delete" method="post">
-      <input
-        type="text"
-        required
-        placeholder="Confirm to delete"
-        name="typetext"
-      />
-      <button type="submit">Delete Account</button>
-    </form>
+    <div class="container">
+      <div class="navbar">
+        <h2>Delete Your Account!</h2>
+      </div>
+      <form
+        action="/users/delete"
+        name="deleteForm"
+        onsubmit="return validateForm()"
+        method="post"
+        class="box"
+      >
+        <h3>Type "Confirm to delete" in the box to delete your account!</h3>
+        <input
+          type="text"
+          required
+          placeholder="Confirm to delete"
+          name="typetext"
+          autocomplete="off"
+        />
+        <input type="submit" value="Delete Account" class="deleteInput"/>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        const val = document.forms["deleteForm"]["typetext"].value;
+        if (val !== "Confirm to delete") {
+          alert("Please Enter Correct Information!");
+          return false;
+        }
+      }
+    </script>
   </body>
 </html>
