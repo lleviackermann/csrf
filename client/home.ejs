@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="/home.css" />
     <title>Document</title>
   </head>
   <body>
@@ -15,14 +15,14 @@
             <button class="btn delete" type="submit">Delete Your Account</button>
           </form>
         <% } else { %>
-        <div class="buttons">
-          <form action="/users/login">
-            <button class="btn login" type="submit">Login</button>
-          </form>
-          <form action="/users/signup">
-            <button class="btn signUp" type="submit">Sign up</button>
-          </form>
-        </div>
+          <div class="buttons">
+            <a href="/users/login">
+              <button class="btn login" type="submit">Login</button>
+            </a>
+            <a href="/users/signup">
+              <button class="btn signUp" type="submit">Sign up</button>
+            </a>
+          </div>
         <% } %>
       </div>
 

@@ -6,8 +6,8 @@ const path = require("path")
 const forms = require("./routes")
 const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser")
-app.use(express.static("client"));
 
+app.use(express.static("client"));
 app.use(cookieParser());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/client"));

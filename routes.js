@@ -30,6 +30,10 @@ router.post("/delete", async (req, res) => {
 
 router.post("/auth", async (req, res) => {
   if (req.body.confirmpassword) {
+    if (req.body.confirmpassword !== req.body.password) {
+      return res.render("./form.ejs", { login: false });
+    }
+
     const user = await Victims.create({
       username: req.body.username,
       password: req.body.password,
