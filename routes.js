@@ -14,15 +14,15 @@ router.get("/signup", (req, res) => {
 router.get("/delete", (req, res) => {
   res.render("./delete.ejs");
 });
-router.get("/delete/account", async (req, res) => {
-  const text = req.query.typetext;
+router.post("/delete", async (req, res) => {
+  const text = req.body.typetext;
   console.log(text);
   if (text === "Confirm to delete") {
     await Victims.findByIdAndDelete(req.cookies.victo_id);
     res.clearCookie('victo_id');
     res.redirect("/");
   } else {
-    res.redirect("/users/delete");
+    res.render("./delete.ejs");
   }
   // res.render("./delete.ejs");
 });
@@ -30,7 +30,7 @@ router.get("/delete/account", async (req, res) => {
 router.post("/auth", async (req, res) => {
   if (req.body.confirmpassword) {
     if (req.body.confirmpassword !== req.body.password) {
-      return res.redirect("/users/signup");
+      return res.render("./form.ejs", { login: false });
     }
 
     const user = await Victims.create({
@@ -38,7 +38,7 @@ router.post("/auth", async (req, res) => {
       password: req.body.password,
     });
     await user.save();
-    res.redirect("/users/login");
+    res.render("./form.ejs", { login: true });
   } else {
     const username = req.body.username;
     const password = req.body.password;
@@ -54,7 +54,7 @@ router.post("/auth", async (req, res) => {
       req.user = true;
       res.redirect("/");
     } else {
-      res.redirect("/users/login");
+      res.render("./form.ejs", { login: true });
     }
   }
 });
