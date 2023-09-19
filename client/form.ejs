@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <link rel="stylesheet" href="/form.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/form.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <% if(login) { %>
-            <h2>Please login into Your Account!</h2>
-        <% } else { %> 
-            <h2>Please Create A new account!</h2>
-        <% } %>
-    
-        <form action="/users/auth" method="post" class="form">
-            <div class="input_box">
-                <label for="username">Username:</label>
-                <input type="text" required placeholder="Username" id="username" name="username">
-            </div>
-            <div class="input_box">
-                <label for="password">Password:</label>
-                <input type="password" required placeholder="Password" id="password" name="password">
-            </div>
-            <% if(!login) { %>
-                <div class="input_box">
-                    <label for="confirmpassword">Confirm password:</label>
-                    <input type="password" required placeholder="confirmpassword" id="confirmpassword" name="confirmpassword">
-                </div>
+        <div class="header">
+            <% if(login) { %>
+            <h2>Please Login Into Your Account!</h2>
+            <% } else { %>
+            <h2>Please Create A New Account!</h2>
             <% } %>
-            <button type="submit">
-                <% if(login) { %>
-                    Login
-                <% } else { %> 
-                    SignUp
-                <% } %>
-            </button>      
-        </form>
+
+        </div>
+
+      <form action="/users/auth" method="post" class="form">
+        <div class="input_box">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            required
+            placeholder="Username"
+            id="username"
+            name="username"
+          />
+        </div>
+        <div class="input_box">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            required
+            placeholder="Password"
+            id="password"
+            name="password"
+          />
+        </div>
+        <% if(!login) { %>
+        <div class="input_box">
+          <label for="confirmpassword">Confirm:<br>Password</label>
+          <input
+            type="password"
+            required
+            placeholder="confirmpassword"
+            id="confirmpassword"
+            name="confirmpassword"
+          />
+        </div>
+        <% } %>
+        <button type="submit">
+          <% if(login) { %> Login <% } else { %> SignUp <% } %>
+        </button>
+      </form>
     </div>
-</body>
+  </body>
 </html>

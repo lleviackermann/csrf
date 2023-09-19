@@ -1,6 +1,5 @@
 const express = require("express");
 const Victims = require("./victims");
-const victims = require("./victims");
 
 const router = express.Router();
 
@@ -43,7 +42,7 @@ router.post("/auth", async (req, res) => {
   } else {
     const username = req.body.username;
     const password = req.body.password;
-    const user = await victims.findOne({
+    const user = await Victims.findOne({
       username: username,
       password: password,
     });

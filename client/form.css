@@ -1,8 +1,90 @@
 .container {
-    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
+    gap: 3rem;
+    /* border: solid 1px #222; */
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding-bottom: 2rem;
+    width: 30rem;
+    border-radius: 10px;
+
+}
+
+h2 {
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+}
+
+.header {
+    background-color: #222;
+    width: 100%;
+    margin-top: -1px;
+    border-radius: 10px 10px 0 0;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input_box {
+    display: flex;
+    gap: 1rem;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    align-items: center;
+}
+
+.input_box input {
+    padding: 10px;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    border-radius: 6px;
+    
+}
+
+button {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  margin-top: 1rem;
+
+}
+
+button:hover,
+button:focus {
+  opacity: .75;
 }
